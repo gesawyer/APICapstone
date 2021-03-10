@@ -98,7 +98,7 @@ namespace DealershipAPI.Controllers
 
             return NoContent();
         }
-        [HttpGet("Search/{make}")]
+        [HttpGet("SearchMake/{make}")]
         public async Task<ActionResult<IEnumerable<Car>>> SearchMake(string make)
         {
             int matches = _context.Cars.Count(x => x.Make.Contains(make));
@@ -111,7 +111,7 @@ namespace DealershipAPI.Controllers
                 return NotFound();
             }
         }
-        [HttpGet("Search/{model}")]
+        [HttpGet("SearchModel/{model}")]
         public async Task<ActionResult<IEnumerable<Car>>> SearchModel(string model)
         {
             int matches = _context.Cars.Count(x => x.Model.Contains(model));
@@ -124,7 +124,7 @@ namespace DealershipAPI.Controllers
                 return NotFound();
             }
         }
-        [HttpGet("Search/{color}")]
+        [HttpGet("SearchColor/{color}")]
         public async Task<ActionResult<IEnumerable<Car>>> SearchColor(string color)
         {
             int matches = _context.Cars.Count(x => x.Color.Contains(color));
@@ -137,7 +137,7 @@ namespace DealershipAPI.Controllers
                 return NotFound();
             }
         }
-        [HttpGet("Search/{year}")]
+        [HttpGet("SearchYear/{year}")]
         public async Task<ActionResult<IEnumerable<Car>>> SearchYear(int year)
         {
             int matches = _context.Cars.Count(x => x.Year == year);
